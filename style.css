@@ -14,9 +14,9 @@ body{
 #header{
     width:100%;
     height:100vh;
-    background: black;
     background-size:cover;
     background-position:center;
+    
 }
 .container{
     padding:10px 10%;
@@ -53,10 +53,34 @@ nav ul li a::after{
 nav ul li a:hover::after{
     width:100%;
 }
-.header-text{
-    margin-top:20%;
-    font-size:30px;
+.hero-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  gap: 20px;
 }
+
+.header-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.header-img {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-img img {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 20px;
+  object-fit: contain;
+}
+
 .header-text h1{
     font-size:60px;
     margin-top:20px;
@@ -64,10 +88,14 @@ nav ul li a:hover::after{
 .header-text h1 span{
     color:#ff004f;
 }
+
+
+
 /*-----------about------------*/
 #about{
     padding:80px 0;
     color:#ababab;
+    
 }
 .row{
     display:flex;
@@ -131,71 +159,70 @@ nav ul li a:hover::after{
 }
 
 /*------------projects-------------*/
-#projects{
-    padding:50px 0;
+#products {
+  padding: 50px 0;
 }
-.work-list{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap:40px;
-    margin-top:50px;
+
+#products .work-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
 }
-.work{
-    border-radius:10px;
-    position:relative;
-    overflow:hidden
+
+#products .work {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
 }
-.work img{
-    width:100%;
-    border-radius:10px;
-    display:block;
-    transition:transform 0.5s;
+
+#products .work img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s ease;
 }
-.layer{
-    width:100%;
-    height:0;
-    background:linear-gradient(rgba(0,0,0,0.6), #ff004f);
-    border-radius:10px;
-    position:absolute;
-    left:0;
-    bottom:0;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    padding:0 40px;
-    text-align:center;
-    font-size:12px;
-    transition: height 0.5s;
+
+#products .layer {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 12px;
+  transition: height 0.5s ease;
 }
-.layer h3{
-    font-weight:1000;
-    margin-bottom:20px;
-    font-size:24px;
+
+#products .layer h3 {
+  font-weight: 1000;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #fff;
 }
-.layer a{
-    margin-top:20px;
-    color:#ff004f;
-    text-decoration:none;
-    font-size:18px;
-    line-height:60px;
-    background:#fff;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    text-align:center;
+
+#products .layer p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
 }
-.work .layer p {
-    font-size: 16px; /* or any desired size, e.g., 18px */
-    line-height: 1.6;
+
+#products .work:hover img {
+  transform: scale(1.1);
 }
-.work:hover img{
-    transform: scale(1.1);
+
+#products .work:hover .layer {
+  height: 100%;
 }
-.work:hover .layer{
-    height: 100%;
-}
+
 
 /*-------=contact---------*/
 .contact-left{
@@ -284,3 +311,10 @@ form input, form textarea{
   margin-top: 20px;
 }
 
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 70%; /* Ensures perfect circle */
+  object-fit: cover;
+  margin-bottom: 20px;
+}
